@@ -4,7 +4,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_classic.retrievers.multi_query import MultiQueryRetriever
-from langchain.retrievers import EnsembleRetriever
+from langchain_classic.retrievers.ensemble import EnsembleRetriever
 import streamlit as st
 
 from config import *
@@ -102,7 +102,7 @@ def query_rag(question):
         response = rag_chain.invoke(question)
 
         # Obtener documentos para mostrarlos
-        docs = retriever.get_relevant_documents(question)
+        docs = retriever.invoke(question)
 
         # Formatear los documentos para mostrar
         docs_info = []

@@ -6,7 +6,7 @@ from langchain_classic.retrievers.multi_query import MultiQueryRetriever
 
 vectorstore = Chroma(
     embedding_function=OpenAIEmbeddings(model="text-embedding-3-large"),
-    persist_directory="/home/enzo/projects/langchain_course/7-chromadb/chroma_db"
+    persist_directory="/home/enzo/projects/langchain_course/chroma_db"
 )
 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)

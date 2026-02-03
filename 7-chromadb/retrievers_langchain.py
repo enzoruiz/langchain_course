@@ -4,7 +4,7 @@ from langchain_openai import OpenAIEmbeddings
 
 vectorstore = Chroma(
     embedding_function=OpenAIEmbeddings(model="text-embedding-3-large"),
-    persist_directory="/home/enzo/projects/langchain_course/7-chromadb/chroma_db"
+    persist_directory="/home/enzo/projects/langchain_course/chroma_db"
 )
 
 retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 2})

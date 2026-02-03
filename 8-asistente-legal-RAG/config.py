@@ -4,7 +4,7 @@ QUERY_MODEL = "gpt-4o-mini"
 GENERATION_MODEL = "gpt-4o"
 
 # Configuración del vector store
-CHROMA_DB_PATH = "C:\\Users\\santiago\\curso_langchain\\Tema 3\\chroma_db"
+CHROMA_DB_PATH = "/home/enzo/projects/langchain_course/chroma_db"
 
 # Configuración del retriever
 SEARCH_TYPE = "mmr"

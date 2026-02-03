@@ -5,7 +5,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 import os
 
 loader = DirectoryLoader(
-    "/home/enzo/projects/langchain_course/7-chromadb/contratos_dummy",
+    "/home/enzo/projects/langchain_course/contratos_dummy",
     glob="**/*.pdf",
     loader_cls=PDFPlumberLoader,
 )
@@ -25,7 +25,7 @@ print(f"Se crearon {len(docs_split)} chunks de texto...")
 vectorstore = Chroma.from_documents(
     docs_split,
     embedding=OpenAIEmbeddings(model="text-embedding-3-large"),
-    persist_directory="/home/enzo/projects/langchain_course/7-chromadb/chroma_db"
+    persist_directory="/home/enzo/projects/langchain_course/chroma_db"
 )
 
 query = "Cual es el inmueble que forma parte del contrato en el que participa María Jiménez Campos?"
